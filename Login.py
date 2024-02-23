@@ -61,10 +61,10 @@ class Application(BackEnd):
             janela.resizable(False, False)
 
         def telaLogin(self):
-            img = ctk.CTkImage(Image.open("foto2.png"), size=(150, 300))
+            img = ctk.CTkImage(Image.open("foto2.png"), size=(300, 300))
 
             label_img = ctk.CTkLabel(master=janela, text='', image=img)
-            label_img.place(x=20, y=100)
+            label_img.place(x=40, y=70)
 
             self.titulo_label = ctk.CTkLabel(master=janela, text="Entre na sua conta e tenha \n acesso a plataforma",
                                        font=("Roboto", 20), text_color="#00B0F0").place(x=50, y=10)
@@ -90,8 +90,10 @@ class Application(BackEnd):
 
             self.checkbox = ctk.CTkCheckBox(master=login_frame, text="Lembre-se de mim sempre").place(x=25, y=235)
 
-            self.login_buttom = ctk.CTkButton(master=login_frame, text="LOGIN", width=300, command=self.verifica_login).place(x=25, y=285)
-
+            self.login_buttom = ctk.CTkButton(master=login_frame, text="LOGIN", width=300, command=self.verifica_login).place(x=25, y=275)
+            self.loginGoogle_buttom = ctk.CTkButton(master=login_frame, text="Conecte ao Google", width=300, fg_color="red").place(x=25, y=320)
+            self.salvarsenha_label = ctk.CTkLabel(master=login_frame, text="Esqueceu a senha?", text_color='white',
+                                              font=('Roboto', 15)).place(x=110, y=350)
         def limpa_entry_login(self):
             self.username_entry.delete(0, END)
             self.senha_entry.delete(0, END)
